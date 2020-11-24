@@ -1,0 +1,13 @@
+{% extends "customer/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'customer:restaurant-register' %}">Register Restaurant</a>
+    <br>
+    <br>
+    <a href="{% url 'customer:add-dishes' %}">Add a dish</a>
+{% endblock %}

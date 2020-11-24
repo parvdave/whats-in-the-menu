@@ -1,0 +1,12 @@
+{% extends "customer/base.html" %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+    <a href="/admin">Admin end</a>
+    <br>
+    <br>
+    <a href="{% url 'customer:customer-home' %}">Customer Home Page</a>
+{% endblock %}

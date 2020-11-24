@@ -1,0 +1,12 @@
+{% extends "customer/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'august-menu' %}">August</a>
+    <br>
+    <br>
+{% endblock %}
