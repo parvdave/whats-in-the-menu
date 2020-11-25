@@ -1,6 +1,7 @@
 var counter = 1;
 
-function changeDiv(i) {
+function changeDiv(i) 
+{
   counter++;
   var firstSlide = document.getElementById("oneSlide");
   var secondSlide = document.getElementById("twoSlide");
@@ -30,7 +31,8 @@ function changeDiv(i) {
     thirdSlide.classList.remove("active");
   }
 
-  if(counter == 2) {
+  if(counter == 2) 
+  {
     secondDIV.classList.remove("hidden");
     firstDIV.classList.add("hidden");
     thirdDIV.classList.add("hidden");
@@ -40,7 +42,8 @@ function changeDiv(i) {
     thirdSlide.classList.remove("active");
   }
 
-  if(counter == 3) {
+  if(counter == 3) 
+  {
     thirdDIV.classList.remove("hidden");
     secondDIV.classList.add("hidden");
     firstDIV.classList.add("hidden");
@@ -50,7 +53,8 @@ function changeDiv(i) {
     thirdSlide.classList.add("active");
   }
 
-  if(counter == 4) {
-    window.location.href = "./menu.html";
+  if(counter == 4) 
+  {
+    window.location.href = pageUrl;
   }
 }

@@ -13,3 +13,6 @@ def renderTemplate(request,slug):
         if i['dishtype'] not in menuItems.keys():
             menuItems.update({i['dishtype']:Dish.objects.all().filter(restaurantSlug=slug.title(),dishtype=i['dishtype'])})
     return render(request,'menu/index.html',{'restaurant':restaurant,'menuitems':menuItems.items()})
+
+def template5(request):
+    return render(request,'menu/template5.html',{})

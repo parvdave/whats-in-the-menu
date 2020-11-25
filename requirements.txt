@@ -1,10 +1,7 @@
 asgiref==3.3.1
 Django==3.1.3
-<<<<<<< HEAD
 django-colorfield==0.3.2
 django-crispy-forms==1.10.0
-=======
->>>>>>> 994b4b060b99b6a0ad05de867ab28fb03fd8b59e
 Pillow==8.0.1
 pytz==2020.4
 sqlparse==0.4.1

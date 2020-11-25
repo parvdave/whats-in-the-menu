@@ -15,4 +15,4 @@ class RestaurantForms(forms.ModelForm):
     fifth = ColorField(default="#FF0000")
     class Meta:
         model = Restaurant
-        fields = ['restaurantSlug','resName','contact','first','second','third','fourth','fifth','address','tagline','plan','duration','cost']
+        fields = ['restaurantSlug','resName','contact','first','second','third','fourth','fifth','address','tagline','plan','duration','cost','restaurantImage','restaurantLogo','extraWords']

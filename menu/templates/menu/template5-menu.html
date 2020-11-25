@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" class="menuHTML">
   <head>
@@ -11,9 +12,9 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="{% static 'Template 5/css/main.css' %}" />
 
-    <script src="./js/summary.js"></script>
+    <script src="{% static 'Template 5/js/summary.js' %}"></script>
 
     <title>Document</title>
   </head>
@@ -37,43 +38,43 @@
       <div class="sliderHori">
         <div class="container">
           <div class="item active">
-            <img src="./images/fork.png" alt="" />
+            <img src="{% static 'Template 5/images/fork.png' %}" alt="" />
           </div>
         </div>
 
         <div class="container">
           <div class="item">
-            <img src="./images/cheeseburger.png" alt="" />
+            <img src="{% static 'Template 5/images/burgericon.png' %}" alt="" />
           </div>
         </div>
 
         <div class="container">
           <div class="item">
-            <img src="./images/chinese-food.png" alt="" />
+            <img src="{% static 'Template 5/images/chineseicon.png' %}" alt="" />
           </div>
         </div>
 
         <div class="container">
           <div class="item">
-            <img src="./images/egg.png" alt="" />
+            <img src="{% static 'Template 5/images/eggicon.png' %}" alt="" />
           </div>
         </div>
 
         <div class="container">
           <div class="item">
-            <img src="./images/vegetables.png" alt="" />
+            <img src="{% static 'Template 5/images/vegetables.png' %}" alt="" />
           </div>
         </div>
 
         <div class="container">
           <div class="item">
-            <img src="./images/food.png" alt="" />
+            <img src="{% static 'Template 5/images/saladicon.png' %}" alt="" />
           </div>
         </div>
 
         <div class="container">
           <div class="item">
-            <img src="./images/bread.png" alt="" />
+            <img src="{% static 'Template 5/images/breadicon.png' %}" alt="" />
           </div>
         </div>
       </div>
@@ -87,7 +88,7 @@
 
       <div class="foodCat">
         <div class="image">
-          <img src="./images/Salad.jpg" alt="" />
+          <img src="{% static 'Template 5/images/Salad.jpg' %}" alt="" />
         </div>
 
         <div class="content">
@@ -121,7 +122,7 @@
 
       <div class="foodCat">
         <div class="image">
-          <img src="./images/Pancake.jpg" alt="" />
+          <img src="{% static 'Template 5/images/Pancake.jpg' %}" alt="" />
         </div>
 
         <div class="content">
@@ -155,7 +156,7 @@
 
       <div class="foodCat">
         <div class="image">
-          <img src="./images/Sushi.jpg" alt="" />
+          <img src="{% static 'Template 5/images/Sushi.jpg' %}" alt="" />
         </div>
 
         <div class="content">
