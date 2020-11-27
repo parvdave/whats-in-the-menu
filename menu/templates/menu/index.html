@@ -4,144 +4,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'Template 4/css/main.css' %}" />
-
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script src="{% static 'Template 5/js/slider.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Template 5/css/main.css' %}" />
+    <title>Welcome Page</title>
   </head>
-  <body>
-    <!-- --------------- -->
-    
-    <header>
-      <!-- --------------- -->
+  <body class="welcomePage">
+    <div class="bigScreen">
+      <h3>Sorry ....</h3>
+    </div>
 
-      <div class="content">
-        <h3>Welcome To</h3>
-        <br />
-        <h1>{{restaurant.resName}}</h1>
-      </div>
-      <!-- --------------- -->
-
-      <br />
-
-      <!-- --------------- -->
-
-      <nav>
-        <div class="sliderHori">
-          <div class="container">
-            <li>Beer</li>
-          </div>
-          <div class="container">
-            <li>Wine</li>
-          </div>
-          <div class="container">
-            <li class="active">Food</li>
-          </div>
-          <div class="container">
-            <li>Dessert</li>
-          </div>
-          <div class="container">
-            <li>Hot Drinks</li>
-          </div>
+    <span class="cirlce3 circle"></span>
+    <div class="grid">
+      <main class="home">
+        {% for tagline,extraword in content %}
+        <div id="div{{forloop.counter}}">
+          <span class="cirlce{{forloop.counter}} circle"></span>
+          <h1>{{tagline}}</h1>
+          <br/>
+          <p>
+            {{buzzword}}
+          </p>
         </div>
-      </nav>
-
-      <!-- --------------- -->
-    </header>
-    <!-- --------------- -->
-
-    <main class="meals">
-      {% for dishtype,dishes in menuitems %}
-        <div class="row">
-          <h2>{{dishtype}}</h2>
-          <div class="sliderHori">
-            
-            {% for dish in dishes %}
-            <div class="container">
-              <div class="items">
-                <h3 class="name">{{dish.dishname}}</h3>
-                <div class="info">
-                  <h3 class="price"><span>₹</span>{{dish.price}}</h3>
-                  <h4 class="cuisine">Italian</h4>
-                </div>
-                {% if dish.dishdetails == "" %}
-                {% else %}
-                  <p class="ingredients">
-                  {{dish.dishdetails}}
-                </p>
-                {% endif %}
-                <div class="hat">
-                  {% if 'non-veg' in dish.buzzwords %}
-                  <img src="{% static 'Template 4/images/NonVegHat.png' %}" alt="" />
-                  {% else %}
-                  <img src="{% static 'Template 4/images/VegHat.png' %}" alt="" />
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
+        {% endfor %}
+      </main>
+      <section class="home">
+        <span class="cirlce2 circle"></span>
+        <div class="slider">
+          <span class="one active" id="oneSlide" onclick="changeDiv(1)"></span>
+          <span class="two" id="twoSlide" onclick="changeDiv(2)"></span>
+          <span class="three" id="threeSlide" onclick="changeDiv(3)"></span>
         </div>
-      {% endfor %}
-      <div class="row">
-        <h2>Risotto</h2>
-        <div class="NosliderHori">
-          <div class="container1">
-            <div class="items">
-              <h3 class="name">Creamy Risotto</h3>
-              <div class="info">
-                <h3 class="price"><span>₹</span> 450</h3>
-                <h4 class="cuisine">Italian</h4>
-              </div>
-              <div class="hat">
-                <img src="{% static 'Template 4/images/VegHat.png' %}" alt="" />
-              </div>
-            </div>
-          </div>
 
-          <div class="container1">
-            <div class="items">
-              <h3 class="name">Pink Risotto</h3>
-              <div class="info">
-                <h3 class="price"><span>₹</span> 450</h3>
-                <h4 class="cuisine">Italian</h4>
-              </div>
-              <div class="hat">
-                <img src="{% static 'Template 4/images/VegHat.png' %}" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <div class="container1">
-            <div class="items">
-              <h3 class="name">Truffle Chicken Risotto</h3>
-              <div class="info">
-                <h3 class="price"><span>₹</span> 550</h3>
-                <h4 class="cuisine">Italian</h4>
-              </div>
-              <div class="hat">
-                <img src="{% static 'Template 4/images/NonVegHat.png' %}" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <div class="container1">
-            <div class="items">
-              <h3 class="name">Pomodorro Chicken Risotto</h3>
-              <div class="info">
-                <h3 class="price"><span>₹</span> 650</h3>
-                <h4 class="cuisine">Italian</h4>
-              </div>
-              <p class="ingredients">
-                Served on In-house multi-grain bread, with mustard, gherkins,
-                cheddar cheese grilled to
-              </p>
-              <div class="hat">
-                <img src="{% static 'Template 4/images/NonVegHat.png' %}" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+        <button onclick="changeDiv(0)">
+          <img src="{% static 'Template 5/images/right-arrow.png' %}" alt="" />
+        </button>
+      </section>
+    </div>
   </body>
+  <script>
+    var pageUrl = "{% url 'menu:template-5-menu' restaurant.restaurantSlug %}";
+  </script>
 </html>

@@ -21,8 +21,8 @@ class Restaurant(models.Model):
     plan = models.CharField(max_length=10,blank=True)
     duration = models.DurationField(null=True)
     cost = models.CharField(max_length=10,blank=True)
-    restaurantImage = models.ImageField(null=True)
-    restaurantLogo = models.ImageField(null=True)
+    restaurantImage = models.ImageField(blank=True,null=True,upload_to='dishimages')
+    restaurantLogo = models.ImageField(blank=True,null=True)
     extraWords = models.TextField(blank=True,max_length=500)
     def __str__(self):
         return self.resName

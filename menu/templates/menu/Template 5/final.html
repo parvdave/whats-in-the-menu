@@ -25,7 +25,7 @@
 
     <header>
       <div class="name">
-        <h1>Name</h1>
+        <h1>{{restaurant.resName}}</h1>
       </div>
       <h2>Hello,</h2>
       <h4>What do you want to eat?</h4>
@@ -85,7 +85,7 @@
 
     <div class="allcategories">
       <h2>Best Seller</h2>
-
+      {% for bestseller in bestsellers %}
       <div class="foodCat">
         <div class="image">
           <img src="{% static 'Template 5/images/Salad.jpg' %}" alt="" />
@@ -94,23 +94,19 @@
         <div class="content">
           <!-- style="--i: #ef0107" for non veg -->
           <div class="heading" style="--i: #4cbb17">
-            <h3>Dish Name</h3>
+            <h3>{{bestseller.dishname}}</h3>
           </div>
           <div class="time"><p>20-25 mins</p></div>
-          <div class="price"><h4>250.00</h4></div>
+          <div class="price"><h4>{{bestseller.price}}</h4></div>
           <div class="tags">
-            <div class="tag"><h4>PIZZA</h4></div>
-            <div class="tag"><h4>BURGER</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-            <div class="tag"><h4>BURGER</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
+            {% for buzzword in bestseller.buzzwords %}
+            <div class="tag"><h4>{{buzzword}}</h4></div>
+            {% endfor %}
           </div>
-          <button onclick="summary_open('recipe1') " class="open-btn">
+          <button onclick="summary_open('recipe{{forloop.counter}}') " class="open-btn">
             Details Of The Dish
           </button>
-          <div id="recipe1">
+          <div id="recipe{{forloop.counter}}">
             <br />
             Below are some basic precautions that each one of us should follow
             for our good health. Pass it on to your family, friends and loved
@@ -119,67 +115,7 @@
           </div>
         </div>
       </div>
-
-      <div class="foodCat">
-        <div class="image">
-          <img src="{% static 'Template 5/images/Pancake.jpg' %}" alt="" />
-        </div>
-
-        <div class="content">
-          <!-- style="--i: #ef0107" for non veg -->
-          <div class="heading" style="--i: #4cbb17">
-            <h3>Dish Name</h3>
-          </div>
-          <div class="time"><p>20-25 mins</p></div>
-          <div class="price"><h4>250.00</h4></div>
-          <div class="tags">
-            <div class="tag"><h4>PIZZA</h4></div>
-            <div class="tag"><h4>BURGER</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-            <div class="tag"><h4>BURGER</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-            <div class="tag"><h4>Spicy</h4></div>
-          </div>
-          <button onclick="summary_open('recipe2') " class="open-btn">
-            Details Of The Dish
-          </button>
-          <div id="recipe2">
-            <br />
-            Below are some basic precautions that each one of us should follow
-            for our good health. Pass it on to your family, friends and loved
-            each one of us should follow for our good health. Pass it on to your
-            family, friends and loved ones.
-          </div>
-        </div>
-      </div>
-
-      <div class="foodCat">
-        <div class="image">
-          <img src="{% static 'Template 5/images/Sushi.jpg' %}" alt="" />
-        </div>
-
-        <div class="content">
-          <!-- style="--i: #4cbb17" for veg -->
-          <div class="heading" style="--i: #ef0107">
-            <h3>Dish Name</h3>
-          </div>
-          <div class="time"><p>20-25 mins</p></div>
-          <div class="price"><h4>250.00</h4></div>
-          <div class="tags">
-            <div class="tag"><h4>PIZZA</h4></div>
-            <div class="tag"><h4>BURGER</h4></div>
-          </div>
-          <button onclick="summary_open('recipe3') " class="open-btn">
-            Details Of The Dish
-          </button>
-          <div id="recipe3">
-            <br />
-            Below are some basic precautions that each one of us should follow
-            for our good health.
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </body>
 </html>

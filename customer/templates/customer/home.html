@@ -1,13 +1,26 @@
 {% extends "customer/base.html" %}
 {% load crispy_forms_tags %}
+{% block style %}
+#buttons
+{
+    padding-top:10px;
+    padding-left:10px;
+}
+{% endblock %}
 {% block content %}
     {% if messages %}
+    <div class="alert alert-success" role="alert">
         {% for message in messages %}
             {{message}}
         {% endfor %}
+    </div>
+        
     {% endif %}
-    <a href="{% url 'customer:restaurant-register' %}">Register Restaurant</a>
-    <br>
-    <br>
-    <a href="{% url 'customer:add-dishes' %}">Add a dish</a>
+    <div id="buttons">
+        <a class="btn btn-danger" href="{% url 'customer:restaurant-register' %}">Register Restaurant</a>
+        <br>
+        <br>
+        <a class = "btn btn-primary "href="{% url 'customer:add-dishes' %}">Add a dish</a>
+    </div>
+    
 {% endblock %}

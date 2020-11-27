@@ -22,7 +22,7 @@
     <span class="cirlce3 circle"></span>
     <div class="grid">
       <main class="home">
-        <div id="oneDIV">
+        <div id="div1">
           <span class="cirlce1 circle"></span>
           <h1><strong>Candy</strong> And Green</h1>
           <br />
@@ -31,7 +31,7 @@
             important things!
           </p>
         </div>
-        <div id="twoDIV" class="hidden">
+        <div id="div2" class="hidden">
           <span class="cirlce1 circle"></span>
           <h1>
             <strong>Food</strong> you love, delivered <strong>to you.</strong>
@@ -42,7 +42,7 @@
             excepturi sed, eligendi repudiandae ad.
           </p>
         </div>
-        <div id="threeDIV" class="hidden">
+        <div id="div3" class="hidden">
           <span class="cirlce1 circle"></span>
           <h1><strong>Thanks</strong> for visiting</h1>
           <br />
@@ -67,6 +67,6 @@
     </div>
   </body>
   <script>
-    var pageUrl = "{% url 'menu:template-5-menu' %}";
+    var pageUrl = "{% url 'menu:template-5-menu' restaurant.restaurantSlug %}";
   </script>
 </html>

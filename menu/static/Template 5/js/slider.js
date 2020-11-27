@@ -17,9 +17,9 @@ function changeDiv(i)
     counter = 3;
   }
 
-  var firstDIV = document.getElementById("oneDIV");
-  var secondDIV = document.getElementById("twoDIV");
-  var thirdDIV = document.getElementById("threeDIV");
+  var firstDIV = document.getElementById("div1");
+  var secondDIV = document.getElementById("div2");
+  var thirdDIV = document.getElementById("div3");
 
   if (counter == 1) {
     firstDIV.classList.remove("hidden");

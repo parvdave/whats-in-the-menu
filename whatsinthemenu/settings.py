@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'customer.apps.CustomerConfig',
     'menu.apps.MenuConfig',
     'main.apps.MainConfig',
+    'colorful',
 ]
 
 MIDDLEWARE = [

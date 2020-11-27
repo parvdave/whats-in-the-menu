@@ -14,7 +14,7 @@ def registerRestaurant(request):
             name = form.cleaned_data.get('resName')
             messages.success(request,f'{name} has been registered!')
             form.save()
-            return redirect("customer-home")
+            return redirect("customer:customer-home")
     else:
         form = RestaurantForms()
     return render(request,'customer/register.html',{'form':form})
