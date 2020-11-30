@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'Template 4/css/main.css' %}" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -13,48 +13,35 @@
     
     <header>
       <!-- --------------- -->
-
       <div class="content">
         <h3>Welcome To</h3>
-        <br />
+        <br/>
         <h1>{{restaurant.resName}}</h1>
       </div>
       <!-- --------------- -->
-
+      
       <br />
 
       <!-- --------------- -->
-
+      {{restaurant.restaurantSlug}}
       <nav>
         <div class="sliderHori">
+          {% for category in categories %}
           <div class="container">
-            <li>Beer</li>
+            <li id= "{{category}}" onclick = "update('{{category}}','{{restaurant.restaurantSlug}}')">{{category}}</li>
           </div>
-          <div class="container">
-            <li>Wine</li>
-          </div>
-          <div class="container">
-            <li class="active">Food</li>
-          </div>
-          <div class="container">
-            <li>Dessert</li>
-          </div>
-          <div class="container">
-            <li>Hot Drinks</li>
-          </div>
+          {% endfor %}
         </div>
       </nav>
 
       <!-- --------------- -->
     </header>
     <!-- --------------- -->
-
-    <main class="meals">
+    <main id="maindiv" class="meals">
       {% for dishtype,dishes in menuitems %}
         <div class="row">
           <h2>{{dishtype}}</h2>
           <div class="sliderHori">
-            
             {% for dish in dishes %}
             <div class="container">
               <div class="items">
@@ -144,4 +131,25 @@
       </div>
     </main>
   </body>
+  <script>
+    $(document).ready(function()
+    {
+      var food = document.getElementById('Food');
+      food.classList.add("active");
+      update('Food','{{restaurant.restaurantSlug}}');
+    });
+      function update(cat,slug)
+      {
+        var url = "{% url 'menu:contents' cat=12345 slug=restaurant.restaurantSlug %}".replace('12345', cat.toString());
+        console.log(url);
+        // var string = "{% url 'menu:contents' Burger;
+        $.getJSON("{% url 'menu:contents' cat=12345 slug=restaurant.restaurantSlug %}".replace('12345', cat.toString()),function(items)
+        {
+          console.log('JSON', items);
+          $('#maindiv').append(
+            
+          )
+        });
+      }
+    </script>
 </html>

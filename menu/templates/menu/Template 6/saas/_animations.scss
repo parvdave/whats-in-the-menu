@@ -1,0 +1,23 @@
+@keyframes fadeIn {
+  0% {
+    width: 17px;
+    opacity: 0.25;
+  }
+
+  100% {
+    width: 35px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDiv {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(10);
+  }
+}

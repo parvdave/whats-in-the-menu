@@ -21,8 +21,8 @@ class Restaurant(models.Model):
     plan = models.CharField(max_length=10,blank=True)
     duration = models.DurationField(null=True)
     cost = models.CharField(max_length=10,blank=True)
-    restaurantImage = models.ImageField(blank=True,null=True,upload_to='dishimages')
-    restaurantLogo = models.ImageField(blank=True,null=True)
+    restaurantImage = models.ImageField(blank=True,null=True,upload_to='resimage')
+    restaurantLogo = models.ImageField(blank=True,null=True,upload_to='reslogo')
     extraWords = models.TextField(blank=True,max_length=500)
     def __str__(self):
         return self.resName
@@ -35,6 +35,7 @@ class Dish(models.Model):
     dishpic = models.ImageField(max_length=200,blank=True)
     price = models.CharField(max_length=10,blank=True)
     buzzwords = models.TextField(max_length=1000,blank=True)
+    section = models.CharField(max_length=100,blank=True)
     def __str__(self):
         return self.dishname
     class Meta:

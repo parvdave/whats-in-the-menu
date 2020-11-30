@@ -1,0 +1,530 @@
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: $primaryColor;
+
+    .bigScreen {
+      width: 100%;
+      height: 100vh;
+      @include flexCenter;
+
+      font-family: "Work Sans", Arial, sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+
+      color: $secondaryColor;
+    }
+
+    header {
+      display: none;
+    }
+
+    .category {
+      display: none;
+    }
+
+    .speacial {
+      display: none;
+    }
+
+    .itemGrid {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .itemGrid {
+    .container {
+      grid-template-rows: 220px auto !important;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    width: 90% !important;
+  }
+  .itemGrid {
+    .container {
+      grid-template-rows: 250px auto !important;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    width: 80% !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    width: 70% !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: $secondaryColor;
+    line-height: 1;
+  }
+
+  .bigScreen {
+    display: none;
+  }
+
+  header {
+    width: 100%;
+    text-align: center;
+    h1 {
+      padding: 10px 20px;
+      font-size: 32px;
+      display: inline-block;
+      font-weight: 300;
+      line-height: 1;
+      padding-bottom: 7px;
+      margin-bottom: 10px;
+
+      border-bottom: 4px solid $primaryColor;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+
+  .category {
+    h1 {
+      padding: 10px;
+      padding-left: 15px;
+      width: 70%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0px;
+      color: $tertiaryColor;
+    }
+
+    .sliderHori {
+      overflow: auto;
+      white-space: nowrap;
+      padding-left: 15px;
+      .container {
+        display: inline-block;
+      }
+      .item {
+        width: auto;
+        height: 60px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+
+        background-color: $white;
+
+        display: grid;
+        grid-template-columns: 50px auto;
+        grid-template-rows: 60px;
+        overflow: hidden;
+
+        padding: 0 7px;
+        border-radius: 60px;
+        box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.158);
+
+        .imageFood {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: 45px;
+          height: 45px;
+          margin: auto;
+
+          //background-color: $white;
+          // background-image: url("../images/Burger_Titlebar.jpg");
+          // background-size: 100%;
+          // background-size: cover;
+          // background-position: center;
+          // background-repeat: no-repeat;
+          // border-radius: 50%;
+
+          img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.219);
+          }
+        }
+
+        h3 {
+          display: flex;
+          align-items: center;
+          color: $black;
+          font-size: 18px;
+          font-weight: 500;
+          padding-left: 10px;
+          padding-right: 10px;
+          min-width: 80px;
+        }
+      }
+
+      .active {
+        background-color: $primaryColor;
+
+        h3 {
+          color: $white;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .speacial {
+    .intro {
+      h2 {
+        padding: 10px 5px 10px 0;
+        margin-left: 15px;
+        display: inline-block;
+        font-size: 1.5rem;
+        border-bottom: 2px solid $primaryColor;
+        font-weight: 600;
+        margin-bottom: 0px;
+        color: $tertiaryColor;
+        display: inline-block;
+      }
+    }
+    .sliderSpeacials {
+      overflow: auto;
+      white-space: nowrap;
+      padding-left: 15px;
+
+      .container {
+        display: inline-block;
+        .items {
+          width: auto;
+          height: 120px;
+          max-width: 330px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: 20px;
+
+          background-color: $white;
+
+          display: grid;
+          grid-template-columns: 100px auto;
+          grid-template-rows: 120px;
+          overflow: hidden;
+
+          padding: 0 10px;
+          border-radius: 20px;
+          box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.158);
+          .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100%;
+            margin: auto;
+
+            img {
+              width: 100%;
+              border-radius: 20px;
+              box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.219);
+            }
+          }
+
+          .content {
+            padding: 15px;
+            width: 220px;
+
+            h3 {
+              display: inline-block;
+              width: 200px;
+              padding-right: 5px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-size: 19px;
+              font-weight: 700;
+              margin-bottom: 5px;
+              color: $tertiaryColor;
+              padding-bottom: 2px;
+            }
+
+            p {
+              font-size: 15px;
+              font-weight: 400;
+              width: 200px;
+              padding-right: 5px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              margin-bottom: 0px;
+              color: $lightGray;
+              padding-bottom: 2px;
+              margin-bottom: 5px;
+            }
+
+            .short,
+            .short1 {
+              font-size: 15px;
+              display: inline-block;
+              width: auto;
+              font-weight: 400;
+              padding-top: 2px;
+              padding: 7px;
+              padding-left: 0;
+              margin-bottom: 0px;
+              color: $black;
+            }
+
+            .short1 {
+              margin-top: -8px;
+              font-size: 18px;
+              font-weight: 600;
+              position: relative;
+              color: $primaryColor;
+
+              &::before {
+                content: "\f156";
+                padding-right: 2px;
+                font-family: fontAwesome;
+                font-weight: 400;
+                font-size: 18px;
+                color: $primaryColor;
+              }
+            }
+
+            .right {
+              float: right;
+              margin: 0 0 0 auto;
+            }
+
+            .Image {
+              width: 25px;
+              padding-top: 0;
+              height: 25px;
+              margin: 0 0 7px 7px;
+              float: right;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .rating {
+              &::before {
+                content: "\f005";
+                font-family: fontAwesome;
+                font-size: 15px;
+                padding-right: 5px;
+                color: $primaryColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .itemGrid {
+    margin-top: -10px;
+    h2 {
+      padding: 10px 5px 10px 0;
+      margin-left: 15px;
+      display: inline-block;
+      font-size: 1.5rem;
+      border-bottom: 2px solid $primaryColor;
+      font-weight: 600;
+      color: $tertiaryColor;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 160px auto;
+      width: 90%;
+      border-radius: 20px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      font-family: "Dosis", sans-serif;
+      overflow: hidden;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.205);
+
+      .image {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.486);
+        margin-right: 0;
+        margin-bottom: 10px;
+
+        img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          min-width: 100%;
+          min-height: 100%;
+        }
+      }
+
+      button + div {
+        padding: 0 15px;
+        margin-top: 0px;
+        text-align: justify;
+        height: 0;
+        transition: height 0.5s;
+        overflow: hidden;
+        overflow-y: scroll;
+        font-weight: 500;
+      }
+
+      .hidden {
+        height: 70px !important;
+      }
+
+      .nothidden {
+        height: 0 !important;
+      }
+
+      .open-btn {
+        background-color: transparent;
+        background: url("../images/downArrow.png") no-repeat;
+        background-position: 100% 80%;
+        display: block;
+        cursor: pointer;
+        width: 94%;
+        border: none;
+        font-family: "Dosis", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        outline: none;
+        text-align: left;
+        color: $tertiaryColor;
+        padding-bottom: 4px;
+        padding-left: 5px;
+        margin: -5px 10px 0 10px;
+        border-bottom: 1px solid #9b9b9b;
+      }
+
+      .content {
+        padding: 5px;
+        padding-top: 0;
+        h3 {
+          padding: 10px;
+          width: 92%;
+          font-size: 22px;
+          font-weight: 600;
+          color: $tertiaryColor;
+          display: inline-block;
+          margin-bottom: 5px;
+        }
+
+        .foodType {
+          @include flexCenter;
+          width: 5%;
+          display: inline-block;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .tags {
+          padding: 0 20px;
+          text-align: left;
+          overflow-x: auto;
+          white-space: nowrap;
+          padding-left: 10px;
+          min-height: 41px;
+          .tag {
+            background-color: $tagsGray;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 15px;
+            margin-right: 1px;
+
+            h4 {
+              font-size: 12px;
+              font-weight: 500;
+              color: $black;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+            }
+          }
+        }
+
+        .info {
+          padding: 15px 10px;
+          display: grid;
+          grid-template-columns: auto auto auto;
+          p {
+            display: inline-block;
+          }
+
+          .something {
+            @include flexCenter;
+            justify-content: left;
+            margin-left: 10px;
+          }
+
+          .time {
+            font-family: "Dosis", sans-serif;
+            padding-top: 5px;
+            @include flexCenter;
+            font-weight: 500;
+
+            span {
+              display: inline-block;
+              position: relative;
+              &::before {
+                content: "\f017";
+                font-family: fontAwesome;
+                position: absolute;
+                top: -2px;
+                left: -24px;
+                font-weight: 400;
+                font-size: 20px;
+                color: $primaryColor;
+              }
+            }
+          }
+
+          .price {
+            @include flexCenter;
+            justify-content: left;
+            margin: 0 10px 0 auto;
+            font-size: 18px;
+            font-weight: 600;
+            color: $primaryColor;
+            position: relative;
+            margin-top: 4px;
+
+            &::before {
+              content: "\f156";
+              font-family: fontAwesome;
+              padding-right: 3px;
+              font-weight: 100;
+              font-size: 18px;
+              color: $primaryColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .time {
+    justify-content: left;
+    margin: 0 0 0 auto;
+  }
+}

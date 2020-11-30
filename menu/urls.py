@@ -7,8 +7,9 @@ app_name = "menu"
 
 urlpatterns = [
     path('',views.home,name="menu-home"),
-    path('<str:slug>',views.renderTemplate,name="render-menu"),
+    path('<str:slug>/',views.renderTemplate,name="render-menu"),
     path('<str:slug>/final',views.renderTemplate5,name="template-5-menu"),
+    path('<str:cat>/<str:slug>',views.jsonitems,name="contents"),
 ]
 # path('august_cafe',views.renderTemplate,name="august-menu"),
 # path('best',TemplateView.as_view(template_name="menu/template5-menu.html"),name="template-5-menu"),

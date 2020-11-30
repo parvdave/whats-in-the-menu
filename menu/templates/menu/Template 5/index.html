@@ -12,9 +12,9 @@
     />
     <script src="{% static 'Template 5/js/slider.js' %}"></script>
     <link rel="stylesheet" href="{% static 'Template 5/css/main.css' %}" />
-    <title>Welcome Page</title>
+    <title>Welcome to {{restaurant.resName}}</title>
   </head>
-  <body class="welcomePage">
+  <body onload = "changeDiv(-1)" class="welcomePage">
     <div class="bigScreen">
       <h3>Sorry ....</h3>
     </div>
@@ -22,35 +22,16 @@
     <span class="cirlce3 circle"></span>
     <div class="grid">
       <main class="home">
-        <div id="div1">
+        {% for tagline,extrawords in content %}
+        <div id="div{{forloop.counter}}">
           <span class="cirlce1 circle"></span>
-          <h1><strong>Candy</strong> And Green</h1>
+          <h1>{{tagline}}</h1>
           <br />
           <p>
-            Easily delegate the small tasks and devote time to the most
-            important things!
+            {{extrawords}}
           </p>
         </div>
-        <div id="div2" class="hidden">
-          <span class="cirlce1 circle"></span>
-          <h1>
-            <strong>Food</strong> you love, delivered <strong>to you.</strong>
-          </h1>
-          <br />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quod
-            excepturi sed, eligendi repudiandae ad.
-          </p>
-        </div>
-        <div id="div3" class="hidden">
-          <span class="cirlce1 circle"></span>
-          <h1><strong>Thanks</strong> for visiting</h1>
-          <br />
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis
-            ea sed laborum ipsam quasi officiis repellat.
-          </p>
-        </div>
+        {% endfor %}
       </main>
       <section class="home">
         <span class="cirlce2 circle"></span>
