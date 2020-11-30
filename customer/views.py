@@ -19,17 +19,19 @@ class RegisterRestaurant(TemplateView):
             messages.success(request,f'{name} has been registered!')
             form.save()
             return redirect("customer:customer-home")
-def registerRestaurant(request):
-    if request.method == "POST":
-        form = RestaurantForms(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data.get('resName')
-            messages.success(request,f'{name} has been registered!')
-            form.save()
-            return redirect("customer:customer-home")
-    else:
-        form = RestaurantForms()
-    return render(request,'customer/register.html',{'form':form})
+# def registerRestaurant(request):
+#     if request.method == "POST":
+#         form = RestaurantForms(request.POST)
+#         if form.is_valid():
+#             name = form.cleaned_data.get('resName')
+#             messages.success(request,f'{name} has been registered!')
+#             form.save()
+#             return redirect("customer:customer-home")
+#     else:
+#         form = RestaurantForms()
+#     return render(request,'customer/register.html',{'form':form})
+
+
 def registerDish(request):
     if request.method == "POST":
         form = DishForms(request.POST)
